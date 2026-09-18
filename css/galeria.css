@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+:root{
+    --primary-color:rgba(6, 6, 6); 
+    --secondary-color:rgba(13, 13, 13); 
+    --color-titulo:rgba(248, 248, 248);
+    --color-subtitulo:rgb(215, 167, 76);
+    --color-parrafo:rgb(147, 142, 143);
+    --fuente-titulo: 'Playfair Display', serif;
+    --fuente-parrafo: 'Inter', sans-serif;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform:translateY(0)
+    }
+}
+
+/* =========================================
+    SECCIÓN GALERÍA
+========================================= */
+.galeria {
+    padding: 80px 20px;
+    background-color: var(--primary-color); /* Fondo oscuro del sitio */
+    color: var(--color-titulo);
+    font-family: sans-serif;
+    text-align: center;
+}
+
+/* =========================================
+    ENCABEZADO
+========================================= */
+.galeria-header {
+    max-width: 600px;
+    margin: 0 auto 40px auto;
+}
+
+.galeria-subtitle {
+    display: block;
+    color: var(--color-subtitulo);
+    font-family: var(--fuente-parrafo);
+    letter-spacing: 0.1em;
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    animation: aparecer .3s ease;
+}
+
+.galeria-header h2 {
+    font-family: 'Playfair Display', serif; /* Tipografía elegante */
+    font-size: 36px;
+    margin: 0 0 10px 0;
+    font-weight: 600;
+    animation: aparecer .6s ease;
+}
+
+.galeria-header .resaltado {
+    color: var(--color-subtitulo);
+}
+
+.galeria-header p {
+    color: var(--color-parrafo);
+    font-size: 15px;
+    line-height: 1.6;
+    margin: 0;
+    animation: aparecer 1s ease;
+}
+
+/* =========================================
+    GRILLA
+========================================= */
+.galeria-grid {
+    display: grid;
+    /* 4 columnas por defecto, ajustables */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    animation: aparecer 1.3s ease;
+}
+
+/* =========================================
+    TARJETAS Y EFECTO HOVER
+========================================= */
+.galeria-item {
+    position: relative;
+    border-radius: 10px; /* Bordes redondeados como en el diseño */
+    overflow: hidden; /* Esto asegura que el zoom no se salga de los bordes */
+    aspect-ratio: 1 / 1; /* Hace que las tarjetas sean perfectamente cuadradas */
+    cursor: pointer;
+}
+
+.galeria-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Evita que la imagen se deforme */
+    display: block;
+    transition: transform 0.5s ease; /* Transición suave para el zoom */
+}
+
+/* Capa oscura y textos superpuestos */
+.galeria-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75); /* Fondo negro semitransparente */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0; /* Totalmente invisible por defecto */
+    transition: opacity 0.4s ease; /* Transición suave de aparición */
+}
+
+.overlay-categoria {
+    color: #dfb350;
+    font-size: 13px;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    transform: translateY(15px); /* Empieza un poco más abajo */
+    transition: transform 0.4s ease;
+}
+
+.overlay-titulo {
+    color: #ffffff;
+    font-size: 22px;
+    margin: 0;
+    font-weight: 600;
+    transform: translateY(15px); /* Empieza un poco más abajo */
+    transition: transform 0.4s ease;
+}
+
+/* =========================================
+    LAS ACCIONES AL PASAR EL MOUSE (:HOVER)
+========================================= */
+/* 1. Muestra la capa oscura */
+.galeria-item:hover .galeria-overlay {
+    opacity: 1;
+}
+
+/* 2. Hace un zoom sutil en la foto */
+.galeria-item:hover img {
+    transform: scale(1.08);
+}
+
+/* 3. Sube los textos suavemente a su posición original */
+.galeria-item:hover .overlay-categoria,
+.galeria-item:hover .overlay-titulo {
+    transform: translateY(0);
+}
+
+/* =========================================
+    RESPONSIVE DESIGN (Adaptación a pantallas)
+========================================= */
+/* Tablets: 2 columnas */
+@media (max-width: 992px) {
+    .galeria-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Celulares: 1 columna */
+@media (max-width: 576px) {
+    .galeria-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

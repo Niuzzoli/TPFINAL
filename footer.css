@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+:root{
+    --primary-color:rgba(6, 6, 6); 
+    --secondary-color:rgba(13, 13, 13); 
+    --color-titulo:rgba(248, 248, 248);
+    --color-subtitulo:rgb(215, 167, 76);
+    --color-parrafo:rgb(147, 142, 143);
+    --fuente-titulo: 'Playfair Display', serif;
+    --fuente-parrafo: 'Inter', sans-serif;
+}
+
+/* *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} */
+
+/* =========================================
+   FOOTER GENERAL
+========================================= */
+.site-footer {
+    background-color: var(--primary-color);
+    color: var(--color-parrafo);
+    font-family: sans-serif;
+    padding: 60px 20px 20px 20px;
+    border-top: 1px solid #1a1a1a; /* Pequeña línea divisoria superior opcional */
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* =========================================
+   COLUMNAS (Grid/Flexbox)
+========================================= */
+.footer-top {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.footer-col {
+    flex: 1;
+    min-width: 200px;
+}
+
+/* La primera columna (Marca) necesita un poco más de espacio */
+.brand-col {
+    flex: 1.5;
+    min-width: 280px;
+    padding-right: 40px;
+}
+
+/* Títulos de las columnas */
+.footer-col h4 {
+    color: var(--color-titulo);
+    font-family: var(--fuente-titulo);
+    font-size: 18px;
+    margin: 0 0 25px 0;
+    font-weight: 600;
+}
+
+/* =========================================
+   MARCA Y REDES SOCIALES
+========================================= */
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+/* Círculo dorado con la tijera */
+.logo-icon {
+    background-color: var(--color-subtitulo);
+    color: var(--primary-color);
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.footer-logo h3 {
+    color: var(--color-titulo);
+    font-family: var(--fuente-titulo);
+    font-size: 24px;
+    margin: 0;
+    letter-spacing: 1px;
+}
+
+.brand-col p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.footer-socials {
+    display: flex;
+    gap: 15px;
+}
+
+.footer-socials a {
+    /* background-color: #1a1a1a;
+    color: var(--color-titulo);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    font-family: var(--fuente-parrafo); */
+    background-color: #1B1B1B;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    color: var(--color-titulo);
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.footer-socials a svg {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+}
+
+.footer-socials a:hover {
+    background-color: var(--color-subtitulo);
+    color: var(--primary-color);
+}
+
+/* =========================================
+    ENLACES Y SERVICIOS
+========================================= */
+.links-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.links-col ul li {
+    margin-bottom: 15px;
+}
+
+.links-col ul li a {
+    color: #a0a0a0;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+    font-family: var(--fuente-parrafo);
+}
+
+.links-col ul li a:hover {
+    color: var(--color-subtitulo); 
+}
+
+/* =========================================
+    CONTACTO
+========================================= */
+.contact-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.contact-col ul li {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.contact-col ul li svg {
+    margin-top: 3px; /* Alinea el ícono con la primera línea de texto */
+    flex-shrink: 0;
+}
+
+/* =========================================
+    BARRA INFERIOR (Copyright)
+========================================= */
+.footer-bottom {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 30px;
+    border-top: 1px solid #222222; /* Línea separadora sutil */
+    font-size: 13px;
+    color: #777777; /* Un gris un poco más oscuro para no resaltar tanto */
+}
+
+.footer-bottom p {
+    margin: 5px 0;
+}

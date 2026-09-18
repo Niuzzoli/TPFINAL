@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+:root{
+    --primary-color:rgba(6, 6, 6); 
+    --secondary-color:rgba(13, 13, 13); 
+    --color-titulo:rgba(248, 248, 248);
+    --color-subtitulo:rgb(215, 167, 76);
+    --color-parrafo:rgb(147, 142, 143);
+    --fuente-titulo: 'Playfair Display', serif;
+    --fuente-parrafo: 'Inter', sans-serif;
+}
+
+nav{
+    background-color: transparent;
+    height: 10vh;
+    flex-wrap: wrap;
+    width: 100%;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 200px;
+    z-index: 100;
+    border-bottom: 1px solid transparent;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+nav.nav-scroll{
+    background-color: var(--primary-color);
+    border-bottom-color: rgba(248, 248, 248, 0.16);
+}
+
+nav > a,
+nav ul{
+    display: flex;
+    align-items: center;
+}
+
+nav ul{
+    list-style: none;
+    gap: 24px;
+}
+
+nav > a{
+    gap: 8px;
+}
+
+nav a{
+    text-decoration: none;
+    color: white;
+}
+
+nav ul li a{
+    position: relative;
+    color: var(--color-parrafo);
+    font-family: var(--fuente-parrafo);
+}
+
+nav ul li a::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-subtitulo);
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover{
+    color: var(--color-titulo);
+}
+
+nav ul li a:hover::after{
+    width: 100%;
+}
+
+#logo{
+    background-color: var(--color-subtitulo);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    color: black;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    line-height: 1;
+}
+
+#logo-texto{
+    font-family: var(--fuente-titulo);
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+
+#boton-reservar{
+    font-family: var(--fuente-parrafo);
+    color: black;
+    background-color: var(--color-subtitulo);
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: 500;
+}
