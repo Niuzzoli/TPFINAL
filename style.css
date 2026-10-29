@@ -744,3 +744,155 @@ textarea::-webkit-scrollbar-thumb:active {
     margin: 0;
 }
 /* FIN CONTACTO */
+/* =========================================
+    RESPONSIVE DESIGN
+========================================= */
+/* Pantallas medianas */
+@media (max-width: 1200px) {
+    .hero h1 {
+        font-size: 90px;
+    }
+
+    .hero .tarjeta-individual-hero {
+        min-width: 20vw;
+        max-width: 20vw;
+        padding: 15px;
+    }
+
+    .servicios .cards,
+    .equipo .cards {
+        padding: 4rem 3rem 5rem;
+    }
+
+    .equipo .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .info {
+        gap: 60px;
+        padding: 40px 3rem;
+    }
+}
+
+/* Tablets */
+@media (max-width: 900px) {
+    .hero h1 {
+        font-size: 64px;
+    }
+
+    .hero > p {
+        padding: 0 20px;
+    }
+
+    .hero .tajertas-hero {
+        gap: 20px;
+        padding: 0 20px;
+    }
+
+    .hero .tarjeta-individual-hero {
+        min-width: 0;
+        max-width: none;
+        width: calc(50% - 10px);
+    }
+
+    .servicios .cards {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 3rem 2rem 4rem;
+    }
+
+    .equipo .cards {
+        padding: 3rem 2rem 4rem;
+    }
+
+    .servicios > h2,
+    .equipo > h2,
+    .contacto > h2 {
+        font-size: 36px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .servicios > p,
+    .equipo > p,
+    .contacto > p {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .servicios > h6,
+    .equipo > h6,
+    .contacto > h6 {
+        padding-top: 5rem;
+    }
+
+    .info {
+        flex-direction: column;
+        gap: 40px;
+        padding: 40px 2rem 5rem;
+    }
+
+    .izquierda,
+    .derecha {
+        flex: none;
+        width: 100%;
+        min-width: 0;
+    }
+}
+
+/* Celulares */
+@media (max-width: 576px) {
+    .hero h1 {
+        font-size: 42px;
+        padding-top: 100px;
+    }
+
+    .hero > p {
+        font-size: 16px;
+    }
+
+    .hero > p br {
+        display: none;
+    }
+
+    .hero .botones-hero {
+        flex-direction: column;
+        margin: 35px 0;
+    }
+
+    .hero .tajertas-hero {
+        margin-top: 40px;
+    }
+
+    .hero .tarjeta-individual-hero h4 {
+        font-size: 30px;
+    }
+
+    .servicios .cards,
+    .equipo .cards {
+        grid-template-columns: 1fr;
+        padding: 2.5rem 1.25rem 3.5rem;
+    }
+
+    .servicios > h2,
+    .equipo > h2,
+    .contacto > h2 {
+        font-size: 28px;
+    }
+
+    .servicios > p br,
+    .equipo > p br {
+        display: none;
+    }
+
+    .info {
+        padding: 30px 1.25rem 4rem;
+    }
+
+    .derecha {
+        padding: 22px;
+    }
+
+    .contacto-info p {
+        overflow-wrap: anywhere;
+    }
+}

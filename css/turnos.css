@@ -522,3 +522,28 @@
     .stepper span { display: none; } /* Oculta texto del stepper en móviles */
     .reserva-container { padding: 20px; }
 }
+@media (max-width: 480px) {
+    .reserva-section {
+        padding: 90px 12px 60px;
+    }
+
+    .reserva-header h2 {
+        font-size: 28px;
+    }
+
+    .reserva-container {
+        padding: 15px;
+    }
+
+    .calendario-box {
+        padding: 12px;
+    }
+
+    .btn-primary, .btn-secondary {
+        padding: 12px 18px;
+    }
+
+    .resumen-box {
+        padding: 15px;
+    }
+}

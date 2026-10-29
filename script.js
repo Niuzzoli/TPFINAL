@@ -12,6 +12,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
     cambiarFondoHeader();
     window.addEventListener("scroll", cambiarFondoHeader);
+
+    // Menu hamburguesa (celulares y tablets)
+    const botonMenu = document.getElementById("boton-menu");
+
+    function cambiarMenu(abierto) {
+        nav.classList.toggle("menu-abierto", abierto);
+        botonMenu.setAttribute("aria-expanded", abierto);
+        botonMenu.setAttribute("aria-label", abierto ? "Cerrar menú" : "Abrir menú");
+    }
+
+    botonMenu.addEventListener("click", () => {
+        cambiarMenu(!nav.classList.contains("menu-abierto"));
+    });
+
+    // Cierra el menu al elegir una opcion
+    nav.querySelectorAll("ul a").forEach((enlace) => {
+        enlace.addEventListener("click", () => cambiarMenu(false));
+    });
 });
 
 

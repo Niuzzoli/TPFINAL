@@ -176,3 +176,12 @@
         grid-template-columns: repeat(1, 1fr);
     }
 }
+@media (max-width: 480px) {
+    .galeria {
+        padding: 90px 12px 60px;
+    }
+
+    .galeria-header h2 {
+        font-size: 28px;
+    }
+}

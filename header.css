@@ -117,3 +117,90 @@ nav ul li a:hover::after{
     border-radius: 5px;
     font-weight: 500;
 }
+
+#boton-menu{
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    background: none;
+    border: none;
+    color: var(--color-titulo);
+    cursor: pointer;
+}
+
+/* =========================================
+    RESPONSIVE DESIGN
+========================================= */
+@media (max-width: 1200px){
+    nav{
+        padding: 0 5%;
+    }
+}
+
+/* Tablets y celulares: menu hamburguesa */
+@media (max-width: 900px){
+    nav.menu-abierto{
+        background-color: var(--primary-color);
+        border-bottom-color: rgba(248, 248, 248, 0.16);
+    }
+
+    #boton-menu{
+        display: flex;
+    }
+
+    #boton-reservar{
+        margin-left: auto;
+        margin-right: 10px;
+    }
+
+    nav ul{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        background-color: var(--primary-color);
+        border-bottom: 1px solid rgba(248, 248, 248, 0.16);
+        max-height: 0;
+        overflow: hidden;
+        visibility: hidden;
+        transition: max-height 0.3s ease, visibility 0.3s ease;
+    }
+
+    nav.menu-abierto ul{
+        max-height: 80vh;
+        visibility: visible;
+    }
+
+    nav ul li a{
+        display: block;
+        padding: 14px 5%;
+    }
+
+    nav ul li a::after{
+        display: none;
+    }
+}
+
+@media (max-width: 480px){
+    #boton-reservar{
+        display: none;
+    }
+
+    #boton-menu{
+        margin-left: auto;
+    }
+
+    #logo{
+        width: 40px;
+        height: 40px;
+    }
+
+    #logo-texto{
+        font-size: 20px;
+    }
+}
